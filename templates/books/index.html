@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-This is where our lists of books will appear
+<h2>This is where our lists of books will appear</h2>
+{% for book in all_books %}
+
+<div class="books">
+    {{book.author.first_name}} {{book.author.last_name}}
+    {{book.title}} {{book.genre}} {{book.publisher}}
+</div>
+
+{% endfor %}
+
+
 {% endblock %}

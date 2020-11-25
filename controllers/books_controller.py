@@ -10,7 +10,8 @@ books_blueprint = Blueprint("books", __name__)
 # GET '/books'
 @books_blueprint.route("/books")
 def books():
-    return render_template("books/index.html")
+    books = book_repository.select_all()
+    return render_template("books/index.html", all_books=books)
 
 # NEW
 # GET '/books/new'
